@@ -38,7 +38,7 @@ const Card = (props) => {
         </div>
     </div>
 
-
+    
 
         </div>
     );

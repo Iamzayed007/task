@@ -4,15 +4,15 @@ import Cards from '../Cards/Cards';
 import Category from '../Category/Category';
 
 const Products = (props) => {
-    const [products, setProducts]= useState({})
+    // const [products, setProducts]= useState({})
    
-    useEffect(()=>{
-        fetch('./db.json')
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            setProducts(data)})
-    },[])
+    // useEffect(()=>{
+    //     fetch('./db.json')
+    //     .then(res=>res.json())
+    //     .then(data=>{
+    //         // console.log(data);
+    //         setProducts(data)})
+    // },[])
     return (
         <div>
             <div className="p-0">
@@ -38,7 +38,7 @@ const Products = (props) => {
                 <button onClick={()=>props.setShowCategorybar(true)} className="border-2 border-gray-600 text-black px-4 py-2 rounded-md text-1xl font-medium hover:bg-gray-600 transition duration-300">Women Fasion</button>
                 </div>
 
-                <div >
+                <div className="" >
             <Cards />
             {/* {
                 products.map((product)=> {<Card product={product}></Card>})

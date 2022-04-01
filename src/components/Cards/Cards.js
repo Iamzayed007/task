@@ -7,16 +7,16 @@ const Cards = () => {
         fetch('/db.json')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
+            // console.log(data);
             setProducts(data)})
     },[])
     // const [products]=props.products
     return (
-        <div className="grid md:grid-col-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 mx-1 gap-3 py-5 w-full">
             {/* <h1>ha</h1> */}
             {/* <div className="flex flex-col mt-3 "> */}
            {
-            products.map((product)=> {<Card key={product.id} product={product}></Card>})
+            products.map(product =>{ return<Card key={product.id} product={product}> </Card>})
            }
           
         {/* </div> */}

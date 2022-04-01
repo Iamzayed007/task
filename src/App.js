@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar';
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(false);
-  const [showCategorybar, setShowCategorybar]= useState(true)
+  const [showCategorybar, setShowCategorybar]= useState(false)
   return (
     <div className="App font-nunito">
       
