@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import './App.css';
+import Category from './components/Category/Category';
+import Locations from './components/Locations/Locations';
+import Sidebar from './components/Sidebar';
 
 function App() {
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [showCategorybar, setShowCategorybar]= useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App font-nunito">
+      
+   
+
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
+    <Routes>
+        <Route path="/" element={<Locations showSidebar={showSidebar} setShowSidebar={setShowSidebar} 
+                                            showCategorybar={showCategorybar} setShowCategorybar={setShowCategorybar}
+        />} />
+        {/* <Route path="about" element={<About />} /> */}
+      </Routes>
+      {/* <Category showCategorybar={showCategorybar} setShowCategorybar={setShowCategorybar}/> */}
     </div>
   );
 }
