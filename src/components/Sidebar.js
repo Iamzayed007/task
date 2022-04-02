@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 
 
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const Sidebar = (props) => {
     // const [showSidebar, setShowSidebar] = useState(false);
+    const {user,logOut} = useAuth()
     return (
         <div>
             {/* <button onClick={()=>props.setShowSidebar(true)}>click</button> */}
@@ -59,16 +61,19 @@ const Sidebar = (props) => {
                 </div>
               </div>
                 {/*footer*/}
-                <div className="flex mt-64 items-center justify-center p-3 border-t border-solid border-blueGray-200 rounded-b">
-                  <button
-                    className="text-gray-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                   
-                  >
-                    Sign out
-                  </button>
-                
-                </div>
+            {
+              user.email &&     <div className="flex mt-64 items-center justify-center p-3 border-t border-solid border-blueGray-200 rounded-b">
+              <button 
+              onClick={logOut}
+                className="text-gray-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                type="button"
+               
+              >
+                Sign out
+              </button>
+            
+            </div>
+            }
               </div>
             </div>
 

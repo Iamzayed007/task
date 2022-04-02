@@ -1,8 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
+import AddUser from '../AddUser/AddUser';
 import { Account, Cancel, Discount, Edit, HandGrab, HoldOrder, Menu, Pay, Plus, PlusCircle, StickyNote, Trash, Truck } from '../Icons/Icons';
 
 const Cart = (props) => {
-
+    const [showUserModal,setShowUserModal] =useState(false)
+    console.log(showUserModal);
     return (
         <div className=''>
             <div className="flex md:justify-between mx-4">
@@ -21,9 +24,14 @@ const Cart = (props) => {
                     <h4 >  Steve Jobs</h4>
                 </div>
                 <div className="">
-                    <button><PlusCircle/></button>
+                    <button onClick={()=>setShowUserModal(true)}><PlusCircle/></button>
+                    <AddUser showUserModal={showUserModal} setShowUserModal={setShowUserModal} />
+                 
                 </div>
             </div>
+            
+                
+            
             <div>
                 <div className="mt-2 mx-4">
 
@@ -108,6 +116,8 @@ const Cart = (props) => {
 
                 </div>
             </div>
+            
+
         </div>
     );
 };

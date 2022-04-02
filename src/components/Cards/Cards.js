@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 
-const Cards = () => {
+const Cards = (props) => {
     const [products, setProducts]= useState([])
     useEffect(()=>{
         fetch('/db.json')
@@ -10,7 +10,7 @@ const Cards = () => {
             // console.log(data);
             setProducts(data)})
     },[])
-    // const [products]=props.products
+    // const {products}=props.products
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 mx-1 gap-3 py-5 w-full">
             {/* <h1>ha</h1> */}

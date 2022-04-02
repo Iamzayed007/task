@@ -4,15 +4,7 @@ import Cards from '../Cards/Cards';
 import Category from '../Category/Category';
 
 const Products = (props) => {
-    // const [products, setProducts]= useState({})
-   
-    // useEffect(()=>{
-    //     fetch('./db.json')
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         // console.log(data);
-    //         setProducts(data)})
-    // },[])
+  
     return (
         <div>
             <div className="p-0">
@@ -39,7 +31,7 @@ const Products = (props) => {
                 </div>
 
                 <div className="" >
-            <Cards />
+            <Cards  />
             {/* {
                 products.map((product)=> {<Card product={product}></Card>})
             } */}
